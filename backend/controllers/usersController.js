@@ -42,9 +42,10 @@ const registerUser = asyncHandler(async (req, res) => {
             email: user.email,
             token: generateToken(user._id),
         })
-        res.status(400)
-        throw new Err
-    } else {or('Invalid user data')
+    
+    } else {
+    res.status(400)
+        throw new Error('Invalid user data')
     }
 })
 
@@ -113,3 +114,4 @@ module.exports = {
     loginUser,
     getMe,
 }
+
